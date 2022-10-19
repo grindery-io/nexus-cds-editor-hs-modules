@@ -1,7 +1,16 @@
 import React from 'react';
-import { RichInput } from 'grindery-ui';
+import { RichInput, CircularProgress } from 'grindery-ui';
 
-const ContributeStep2 = ({ moduleData, onButtonClick, data, setData }) => {
+const ContributeStep2 = ({
+  moduleData,
+  onNextButtonClick,
+  data,
+  setData,
+  error,
+  setError,
+  onBackButtonClick,
+  loading,
+}) => {
   const module = moduleData.step2;
   return (
     <div
@@ -12,7 +21,9 @@ const ContributeStep2 = ({ moduleData, onButtonClick, data, setData }) => {
         <div className="heading">
           {module.heading && <h2>{module.heading}</h2>}
 
-          {module.subtitle && <p>{module.subtitle}</p>}
+          {module.subtitle && (
+            <p dangerouslySetInnerHTML={{ __html: module.subtitle }} />
+          )}
         </div>
       )}
 
@@ -20,7 +31,9 @@ const ContributeStep2 = ({ moduleData, onButtonClick, data, setData }) => {
         {module.important && (
           <span className="important">{module.important}</span>
         )}
-        {module.subtitle_2 && <p>{module.subtitle_2}</p>}
+        {module.subtitle_2 && (
+          <p dangerouslySetInnerHTML={{ __html: module.subtitle_2 }} />
+        )}
         {module.image.src && (
           <img
             src={module.image.src}
@@ -35,6 +48,7 @@ const ContributeStep2 = ({ moduleData, onButtonClick, data, setData }) => {
             label={module.form.username_label}
             placeholder={module.form.username_placeholder}
             onChange={(value) => {
+              setError({ type: '', text: '' });
               setData((_data) => ({
                 ..._data,
                 contributor: { ..._data.contributor, username: value },
@@ -50,6 +64,7 @@ const ContributeStep2 = ({ moduleData, onButtonClick, data, setData }) => {
             label={module.form.name_label}
             placeholder={module.form.name_placeholder}
             onChange={(value) => {
+              setError({ type: '', text: '' });
               setData((_data) => ({
                 ..._data,
                 entry: { ..._data.entry, name: value },
@@ -66,6 +81,7 @@ const ContributeStep2 = ({ moduleData, onButtonClick, data, setData }) => {
             label={module.form.description_label}
             placeholder={module.form.description_placeholder}
             onChange={(value) => {
+              setError({ type: '', text: '' });
               setData((_data) => ({
                 ..._data,
                 entry: { ..._data.entry, description: value },
@@ -80,6 +96,7 @@ const ContributeStep2 = ({ moduleData, onButtonClick, data, setData }) => {
             label={module.form.icon_label}
             placeholder={module.form.icon_placeholder}
             onChange={(value) => {
+              setError({ type: '', text: '' });
               setData((_data) => ({
                 ..._data,
                 entry: { ..._data.entry, icon: value },
@@ -89,17 +106,36 @@ const ContributeStep2 = ({ moduleData, onButtonClick, data, setData }) => {
             options={[]}
             singleLine
             tooltip={module.form.icon_tooltip}
+            required
           />
         </div>
 
         <div>
-          <a
-            className="cta_button"
-            onClick={onButtonClick}
-            style={{ cursor: 'pointer' }}
-          >
-            {module.button}
-          </a>
+          {loading && (
+            <div class="cds-editor__loading">
+              <CircularProgress />
+            </div>
+          )}
+          {error && error.text && (
+            <p className="cds-editor__form-error">{error.text}</p>
+          )}
+          <div class="cds-editor__form-buttons">
+            <a
+              className="cta_button back"
+              onClick={onBackButtonClick}
+              style={{ cursor: 'pointer' }}
+            >
+              Back
+            </a>
+
+            <a
+              className="cta_button"
+              onClick={onNextButtonClick}
+              style={{ cursor: 'pointer' }}
+            >
+              {module.button}
+            </a>
+          </div>
         </div>
       </div>
     </div>

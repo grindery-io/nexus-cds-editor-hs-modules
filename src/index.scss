@@ -44,6 +44,28 @@
   text-align: center;
 }
 
+.cds-editor__form-buttons {
+  padding: 0 0 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.cds-editor__form-buttons .cta_button.back {
+  border: 1px solid #ff7a59;
+  background: transparent;
+  color:  #ff7a59;
+}
+.cds-editor__loading {
+  margin-bottom: 20px;
+}
+.cds-editor__loading svg {
+  color: #ff8f73;
+}
+
 /* Contribute form Step 1 */
 .cds-editor__step1-form {
   margin-top: 45px;
@@ -61,4 +83,31 @@
 .cds-editor__step2-form {
   margin-top: 45px;
   margin-bottom: 30px;
+}
+
+.cds-editor__step2-form .rich-input-box {
+  max-height: 300px;
+  overflow: auto;
+}
+.cds-editor__step2-form .rich-input div[data-slate-editor="true"] {
+  overflow: auto !important;
+}
+
+/* Contribute form Step 3 */
+.react-json-view {
+  padding: 20px 10px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Contribute form Step 4 */
+.cds-editor__step4-form {
+  margin-top: 45px;
+  margin-bottom: 30px;
+}
+.cds-editor__preview-header {
+  padding: 20px 0;
+}
+.cds-editor__preview-header h5 {
+  padding-top: 10px;
 }

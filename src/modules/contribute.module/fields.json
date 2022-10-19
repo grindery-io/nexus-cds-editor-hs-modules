@@ -413,5 +413,369 @@
         "placeholder": "Continue"
       }
     ]
+  },
+  {
+    "type": "group",
+    "name": "step3",
+    "label": "Step 3",
+    "expanded": false,
+    "children": [
+      {
+        "default": "Edit CDS JSON",
+        "label": "Heading",
+        "locked": false,
+        "name": "heading",
+        "required": false,
+        "type": "text",
+        "placeholder": "Heading"
+      },
+      {
+        "default": null,
+        "label": "Subtitle",
+        "locked": false,
+        "name": "subtitle",
+        "required": false,
+        "type": "text",
+        "placeholder": "Subtitle"
+      },
+      {
+        "default": null,
+        "label": "Important",
+        "locked": false,
+        "name": "important",
+        "required": false,
+        "type": "text",
+        "placeholder": "IMPORTANT"
+      },
+      {
+        "default": "See CDS definition schema for the reference: <a href='https://github.com/grindery-io/grindery-nexus-schema-v2/tree/master/connectors'>https://github.com/grindery-io/grindery-nexus-schema-v2/tree/master/connectors</a>",
+        "label": "Subtitle 2",
+        "locked": false,
+        "name": "subtitle_2",
+        "required": false,
+        "type": "text",
+        "placeholder": "Subtitle"
+      },
+      {
+        "label": "Image",
+        "locked": false,
+        "name": "image",
+        "required": false,
+        "type": "image",
+        "default": {
+          "size_type": "exact",
+          "src": "",
+          "alt": "image-alt-text",
+          "loading": "lazy",
+          "width": 128,
+          "height": 128,
+          "max_width": 128,
+          "max_height": 128
+        },
+        "responsive": true,
+        "resizable": true
+      },
+      {
+        "default": "Continue",
+        "label": "Button",
+        "locked": false,
+        "name": "button",
+        "required": false,
+        "type": "text",
+        "placeholder": "Continue"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "step4",
+    "label": "Step 4",
+    "expanded": false,
+    "children": [
+      {
+        "default": "Select operation to preview the form",
+        "label": "Heading",
+        "locked": false,
+        "name": "heading",
+        "required": false,
+        "type": "text",
+        "placeholder": "Heading"
+      },
+      {
+        "default": null,
+        "label": "Subtitle",
+        "locked": false,
+        "name": "subtitle",
+        "required": false,
+        "type": "text",
+        "placeholder": "Subtitle"
+      },
+      {
+        "default": null,
+        "label": "Important",
+        "locked": false,
+        "name": "important",
+        "required": false,
+        "type": "text",
+        "placeholder": "IMPORTANT"
+      },
+      {
+        "default": null,
+        "label": "Subtitle 2",
+        "locked": false,
+        "name": "subtitle_2",
+        "required": false,
+        "type": "text",
+        "placeholder": "Subtitle"
+      },
+      {
+        "label": "Image",
+        "locked": false,
+        "name": "image",
+        "required": false,
+        "type": "image",
+        "default": {
+          "size_type": "exact",
+          "src": "",
+          "alt": "image-alt-text",
+          "loading": "lazy",
+          "width": 128,
+          "height": 128,
+          "max_width": 128,
+          "max_height": 128
+        },
+        "responsive": true,
+        "resizable": true
+      },
+      {
+        "type": "group",
+        "name": "form",
+        "label": "Form",
+        "expanded": false,
+        "children": [
+          {
+            "default": "Operation Type",
+            "label": "Operation type field label",
+            "locked": false,
+            "name": "type_label",
+            "required": false,
+            "type": "text",
+            "placeholder": "Operation Type"
+          },
+          {
+            "default": "Select operation type",
+            "label": "Operation type field placeholder",
+            "locked": false,
+            "name": "type_placeholder",
+            "required": false,
+            "type": "text",
+            "placeholder": "Select operation type"
+          },
+          {
+            "default": "Trigger",
+            "label": "Trigger field label",
+            "locked": false,
+            "name": "trigger_label",
+            "required": false,
+            "type": "text",
+            "placeholder": "Trigger"
+          },
+          {
+            "default": "Select trigger",
+            "label": "Trigger field placeholder",
+            "locked": false,
+            "name": "trigger_placeholder",
+            "required": false,
+            "type": "text",
+            "placeholder": "Select trigger"
+          },
+          {
+            "default": "Action",
+            "label": "Action field label",
+            "locked": false,
+            "name": "action_label",
+            "required": false,
+            "type": "text",
+            "placeholder": "Action"
+          },
+          {
+            "default": "Select action",
+            "label": "Action field placeholder",
+            "locked": false,
+            "name": "action_placeholder",
+            "required": false,
+            "type": "text",
+            "placeholder": "Select action"
+          }
+        ]
+      },
+      {
+        "default": "Submit CDS",
+        "label": "Button",
+        "locked": false,
+        "name": "button",
+        "required": false,
+        "type": "text",
+        "placeholder": "Submit"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "success",
+    "label": "Success step",
+    "expanded": false,
+    "children": [
+      {
+        "default": "Thank you for submission",
+        "label": "Heading",
+        "locked": false,
+        "name": "heading",
+        "required": false,
+        "type": "text",
+        "placeholder": "Heading"
+      },
+      {
+        "default": null,
+        "label": "Subtitle",
+        "locked": false,
+        "name": "subtitle",
+        "required": false,
+        "type": "text",
+        "placeholder": "Subtitle"
+      },
+      {
+        "label": "Image",
+        "locked": false,
+        "name": "image",
+        "required": false,
+        "type": "image",
+        "default": {
+          "size_type": "exact",
+          "src": "",
+          "alt": "image-alt-text",
+          "loading": "lazy",
+          "width": 128,
+          "height": 128,
+          "max_width": 128,
+          "max_height": 128
+        },
+        "responsive": true,
+        "resizable": true
+      },
+      {
+        "default": "<p>Your CDS will be reviewed by our team. Once approved it will appear in the Gallery, and in the <a href='https://nexus.grindery.org' target='_blank'>Nexus dApp</a>.</p>",
+        "label": "Content",
+        "locked": false,
+        "name": "content",
+        "required": false,
+        "type": "richtext"
+      },
+      {
+        "default": "Return to Gallery",
+        "label": "Button",
+        "locked": false,
+        "name": "button",
+        "required": false,
+        "type": "text",
+        "placeholder": "Return to Gallery"
+      },
+      {
+        "default": null,
+        "label": "Footer",
+        "locked": false,
+        "name": "footer",
+        "required": false,
+        "type": "richtext"
+      },
+      {
+        "default": "/code-gallery",
+        "label": "Button redirect",
+        "locked": false,
+        "name": "redirect",
+        "required": false,
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "errors",
+    "label": "Error messages",
+    "expanded": false,
+    "children": [
+      {
+        "default": "Blockchain field is required",
+        "label": "Blockchain field error",
+        "locked": false,
+        "name": "blockchain",
+        "required": false,
+        "type": "text",
+        "placeholder": "Blockchain field is required"
+      },
+      {
+        "default": "Smart-contract address field is required",
+        "label": "Contract address field error",
+        "locked": false,
+        "name": "contract",
+        "required": false,
+        "type": "text",
+        "placeholder": "Smart-contract address field is required"
+      },
+      {
+        "default": "ABI JSON field is required",
+        "label": "ABI JSON field error",
+        "locked": false,
+        "name": "abi",
+        "required": false,
+        "type": "text",
+        "placeholder": "ABI JSON field is required"
+      },
+      {
+        "default": "Username field is required",
+        "label": "Username field error",
+        "locked": false,
+        "name": "username",
+        "required": false,
+        "type": "text",
+        "placeholder": "Username field is required"
+      },
+      {
+        "default": "Smart-contract name field is required",
+        "label": "Smart-contract name field error",
+        "locked": false,
+        "name": "contract_name",
+        "required": false,
+        "type": "text",
+        "placeholder": "Smart-contract name field is required"
+      },
+      {
+        "default": "CDS icon field is required",
+        "label": "CDS icon field error",
+        "locked": false,
+        "name": "cds_icon",
+        "required": false,
+        "type": "text",
+        "placeholder": "CDS icon field is required"
+      },
+      {
+        "default": "ABI is incorrect, CDS JSON wasn't generated. Please, return to the previous step and edit the ABI.",
+        "label": "Invalid ABI error",
+        "locked": false,
+        "name": "abi_invalid",
+        "required": false,
+        "type": "text",
+        "placeholder": "ABI is incorrect, CDS JSON wasn't generated. Please, return to the previous step and edit the ABI."
+      },
+      {
+        "default": "Invalid smart-contract address format",
+        "label": "Invalid smart-contract address error",
+        "locked": false,
+        "name": "contract_invalid",
+        "required": false,
+        "type": "text",
+        "placeholder": "Invalid smart-contract address format"
+      }
+    ]
   }
 ]
