@@ -15,7 +15,7 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
       filename: '[name].js',
     },
     optimization: {
-      minimize: false,
+      minimize: true,
     },
     module: {
       rules: [

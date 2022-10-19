@@ -1,13 +1,64 @@
-.cms-react-boilerplate {
+.cds-editor__contribute .MuiInputBase-root {
+  background: rgb(244, 245, 247);
+  border-radius: 6px;
+}
+.cds-editor__contribute input[type="text"] {
+  padding: 11px 14px;
+  font-size: 16px;
+  box-sizing: initial;
+}
+.cds-editor__contribute .MuiAutocomplete-root .MuiOutlinedInput-root {
+  padding: 4px 9px;
+}
+.MuiBox-root .MuiFormControl-root,
+.MuiAutocomplete-root .MuiFormControl-root {
+  margin-top: 4px;
+}
+.MuiTypography-root {
+  font-family: Roboto;
+}
+
+.cds-editor__contribute .Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+.cds-editor__contribute .MuiOutlinedInput-root.Mui-focused,
+.cds-editor__contribute .MuiOutlinedInput-root {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.cds-editor__contribute .required {
+  color: #ffffff !important;
+  opacity: 0.7;
+}
+
+.cds-editor__contribute .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+
+.cds-editor__form-error {
+  padding: 20px 0;
   margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Contribute form Step 1 */
+.cds-editor__step1-form {
+  margin-top: 45px;
+  margin-bottom: 30px;
+}
+.cds-editor__step1-form .rich-input-box {
+  max-height: 300px;
+  overflow: auto;
+}
+.cds-editor__step1-form .rich-input div[data-slate-editor="true"] {
+  overflow: auto !important;
+}
+
+/* Contribute form Step 2 */
+.cds-editor__step2-form {
+  margin-top: 45px;
+  margin-bottom: 30px;
 }

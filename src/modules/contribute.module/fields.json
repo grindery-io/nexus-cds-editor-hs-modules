@@ -1,0 +1,417 @@
+[
+  {
+    "type": "group",
+    "name": "intro",
+    "label": "Intro",
+    "expanded": false,
+    "children": [
+      {
+        "default": "Contribute to the {{ code }} Gallery",
+        "label": "Heading",
+        "locked": false,
+        "name": "heading",
+        "required": false,
+        "type": "text",
+        "placeholder": "Heading"
+      },
+      {
+        "default": "Become a thought leader by helping educate and inspire other developers with your coded creations.",
+        "label": "Subtitle",
+        "locked": false,
+        "name": "subtitle",
+        "required": false,
+        "type": "text",
+        "placeholder": "Subtitle"
+      },
+      {
+        "label": "Image",
+        "locked": false,
+        "name": "image",
+        "required": false,
+        "type": "image",
+        "default": {
+          "size_type": "exact",
+          "src": "",
+          "alt": "image-alt-text",
+          "loading": "lazy",
+          "width": 128,
+          "height": 128,
+          "max_width": 128,
+          "max_height": 128
+        },
+        "responsive": true,
+        "resizable": true
+      },
+      {
+        "default": "<h4>Overview of the submission process:</h4><ul><li><span style='text-decoration: underline;'><a href='https://github.com/login' rel='nofollow noopener' target='_blank'>Log into GitHub</a></span><span>&nbsp;</span>or<span>&nbsp;</span><span style='text-decoration: underline;'><a href='https://github.com/join' rel='nofollow noopener' target='_blank'>create a new account</a></span>.</li><li><span style='text-decoration: underline;'><a href='https://github.com/HubSpot/codegallery' rel='nofollow noopener' target='_blank'>Fork the Code Gallery repository template</a></span>.<span>&nbsp;</span><span style='color: #999999;'><em>(note - do this for each entry)</em></span></li><li>Add your files to the forked repo and set the repo to 'public'.</li><li>Each entry is required to include screenshots of the front-end output. They will display in order of the files,&nbsp;making the&nbsp;featured screenshot the first file.</li><li>Entries can include an optional link to a working demo on your site and/or the HubSpot Marketplace listing.</li><li>The community moderates entries by up voting or flagging.</li><li>Entries with high votes may be featured, while entires with low votes may be removed.</li><li>Periodically we host Hack-a-Thon contests for fun and prizes.</li></ul><h4>Sound exciting?</h4><p>Help the community grow and submit your entry today. We are excited to see what you’ve created. Together we will build the world’s most lovable and collaborative CMS development experiences.</p>",
+        "label": "Content",
+        "locked": false,
+        "name": "content",
+        "required": false,
+        "type": "richtext"
+      },
+      {
+        "default": "Submit an Entry",
+        "label": "Button",
+        "locked": false,
+        "name": "button",
+        "required": false,
+        "type": "text",
+        "placeholder": "Submit an Entry"
+      },
+      {
+        "default": null,
+        "label": "Footer",
+        "locked": false,
+        "name": "footer",
+        "required": false,
+        "type": "richtext"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "progress",
+    "label": "Progress",
+    "expanded": false,
+    "children": [
+      {
+        "default": ["SELECT CONTRACT", "PROVIDE DETAILS", "EDIT CDS", "PREVIEW"],
+        "label": "Step Name",
+        "locked": false,
+        "name": "step_name",
+        "required": false,
+        "type": "text",
+        "placeholder": "Step Name",
+        "occurrence" : {
+          "min" : 1,
+          "max" : 4,
+          "sorting_label_field" : null,
+          "default" : 4
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "step1",
+    "label": "Step 1",
+    "expanded": false,
+    "children": [
+      {
+        "default": "Enter a smart-contract address",
+        "label": "Heading",
+        "locked": false,
+        "name": "heading",
+        "required": false,
+        "type": "text",
+        "placeholder": "Heading"
+      },
+      {
+        "default": "Your first step is to choose a smart-contract that will be used to generate default CDS. You will be able to edit the CDS in the next steps.",
+        "label": "Subtitle",
+        "locked": false,
+        "name": "subtitle",
+        "required": false,
+        "type": "text",
+        "placeholder": "Subtitle"
+      },
+      {
+        "default": "IMPORTANT",
+        "label": "Important",
+        "locked": false,
+        "name": "important",
+        "required": false,
+        "type": "text",
+        "placeholder": "IMPORTANT"
+      },
+      {
+        "default": "The smart-contract address is used to fetch the contact ABI. You also can paste ABI directly in the textarea.",
+        "label": "Subtitle 2",
+        "locked": false,
+        "name": "subtitle_2",
+        "required": false,
+        "type": "text",
+        "placeholder": "Subtitle"
+      },
+      {
+        "label": "Image",
+        "locked": false,
+        "name": "image",
+        "required": false,
+        "type": "image",
+        "default": {
+          "size_type": "exact",
+          "src": "",
+          "alt": "image-alt-text",
+          "loading": "lazy",
+          "width": 128,
+          "height": 128,
+          "max_width": 128,
+          "max_height": 128
+        },
+        "responsive": true,
+        "resizable": true
+      },
+      {
+        "type": "group",
+        "name": "form",
+        "label": "Form",
+        "expanded": false,
+        "children": [
+          {
+            "default": "Select Blockchain",
+            "label": "Blockhain field label",
+            "locked": false,
+            "name": "blockchain_label",
+            "required": false,
+            "type": "text",
+            "placeholder": "Select Blockchain"
+          },
+          {
+            "default": "Search for a Blockchain",
+            "label": "Blockhain field placeholder",
+            "locked": false,
+            "name": "blockchain_placeholder",
+            "required": false,
+            "type": "text",
+            "placeholder": "Search for a Blockchain"
+          },
+          {
+            "default": "Smart-Contract Address",
+            "label": "Contract field label",
+            "locked": false,
+            "name": "contract_label",
+            "required": false,
+            "type": "text",
+            "placeholder": "Smart-Contract Address"
+          },
+          {
+            "default": "0x...",
+            "label": "Contract field placeholder",
+            "locked": false,
+            "name": "contract_placeholder",
+            "required": false,
+            "type": "text",
+            "placeholder": "0x..."
+          },
+          {
+            "default": "ABI JSON",
+            "label": "ABI field label",
+            "locked": false,
+            "name": "abi_label",
+            "required": false,
+            "type": "text",
+            "placeholder": "ABI JSON"
+          },
+          {
+            "default": "Paste ABI JSON here...",
+            "label": "ABI field placeholder",
+            "locked": false,
+            "name": "abi_placeholder",
+            "required": false,
+            "type": "text",
+            "placeholder": "Paste ABI JSON here..."
+          }
+        ]
+      },
+      {
+        "default": "Continue",
+        "label": "Button",
+        "locked": false,
+        "name": "button",
+        "required": false,
+        "type": "text",
+        "placeholder": "Continue"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "step2",
+    "label": "Step 2",
+    "expanded": false,
+    "children": [
+      {
+        "default": "Provide details about the smart-contract and yourself",
+        "label": "Heading",
+        "locked": false,
+        "name": "heading",
+        "required": false,
+        "type": "text",
+        "placeholder": "Heading"
+      },
+      {
+        "default": null,
+        "label": "Subtitle",
+        "locked": false,
+        "name": "subtitle",
+        "required": false,
+        "type": "text",
+        "placeholder": "Subtitle"
+      },
+      {
+        "default": null,
+        "label": "Important",
+        "locked": false,
+        "name": "important",
+        "required": false,
+        "type": "text",
+        "placeholder": "IMPORTANT"
+      },
+      {
+        "default": null,
+        "label": "Subtitle 2",
+        "locked": false,
+        "name": "subtitle_2",
+        "required": false,
+        "type": "text",
+        "placeholder": "Subtitle"
+      },
+      {
+        "label": "Image",
+        "locked": false,
+        "name": "image",
+        "required": false,
+        "type": "image",
+        "default": {
+          "size_type": "exact",
+          "src": "",
+          "alt": "image-alt-text",
+          "loading": "lazy",
+          "width": 128,
+          "height": 128,
+          "max_width": 128,
+          "max_height": 128
+        },
+        "responsive": true,
+        "resizable": true
+      },
+      {
+        "type": "group",
+        "name": "form",
+        "label": "Form",
+        "expanded": false,
+        "children": [
+          {
+            "default": "GitHub Username",
+            "label": "Username field label",
+            "locked": false,
+            "name": "username_label",
+            "required": false,
+            "type": "text",
+            "placeholder": "GitHub Username"
+          },
+          {
+            "default": "username",
+            "label": "Username field placeholder",
+            "locked": false,
+            "name": "username_placeholder",
+            "required": false,
+            "type": "text",
+            "placeholder": "username"
+          },
+          {
+            "default": "Create GitHub account at https://github.com/join if you don't have one.",
+            "label": "Username field tooltip",
+            "locked": false,
+            "name": "username_tooltip",
+            "required": false,
+            "type": "text",
+            "placeholder": "Create GitHub account at https://github.com/join if you don't have one."
+          },
+          {
+            "default": "Smart-Contract Name",
+            "label": "Contract name field label",
+            "locked": false,
+            "name": "name_label",
+            "required": false,
+            "type": "text",
+            "placeholder": "Smart-Contract Name"
+          },
+          {
+            "default": "Contract Name",
+            "label": "Contract field placeholder",
+            "locked": false,
+            "name": "name_placeholder",
+            "required": false,
+            "type": "text",
+            "placeholder": "Contract Name"
+          },
+          {
+            "default": null,
+            "label": "Contract field tooltip",
+            "locked": false,
+            "name": "name_tooltip",
+            "required": false,
+            "type": "text",
+            "placeholder": "Contract Name Tooltip"
+          },
+          {
+            "default": "Smart-Contract Description",
+            "label": "Contract description field label",
+            "locked": false,
+            "name": "description_label",
+            "required": false,
+            "type": "text",
+            "placeholder": "Smart-Contract Description"
+          },
+          {
+            "default": "Contract Description",
+            "label": "Contract description field placeholder",
+            "locked": false,
+            "name": "description_placeholder",
+            "required": false,
+            "type": "text",
+            "placeholder": "Contract Description"
+          },
+          {
+            "default": null,
+            "label": "Contract description field tooltip",
+            "locked": false,
+            "name": "description_tooltip",
+            "required": false,
+            "type": "text",
+            "placeholder": "Contract Description Tooltip"
+          },
+          {
+            "default": "CDS Icon",
+            "label": "CDS icon field label",
+            "locked": false,
+            "name": "icon_label",
+            "required": false,
+            "type": "text",
+            "placeholder": "CDS Icon"
+          },
+          {
+            "default": "Image URL or base64 string",
+            "label": "CDS icon field placeholder",
+            "locked": false,
+            "name": "icon_placeholder",
+            "required": false,
+            "type": "text",
+            "placeholder": "Image URL or base64 string"
+          },
+          {
+            "default": "Recommended icon size 24x24px. Allowed formats: PNG or SVG. Must be on transparent background.",
+            "label": "CDS icon field tooltip",
+            "locked": false,
+            "name": "icon_tooltip",
+            "required": false,
+            "type": "text",
+            "placeholder": "Recommended icon size 24x24px. Allowed formats: PNG or SVG. Must be on transparent background."
+          }
+        ]
+      },
+      {
+        "default": "Continue",
+        "label": "Button",
+        "locked": false,
+        "name": "button",
+        "required": false,
+        "type": "text",
+        "placeholder": "Continue"
+      }
+    ]
+  }
+]
