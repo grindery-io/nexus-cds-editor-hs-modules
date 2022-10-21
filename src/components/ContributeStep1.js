@@ -1,41 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { RichInput, Autocomplete, CircularProgress } from 'grindery-ui';
-import ethereumLogo from '../images/ethereum.svg';
-import gnosisLogo from '../images/xdai.svg';
-import polygonLogo from '../images/polygon.svg';
-
-const API_ENDPOINT = {
-  ethereum: {
-    URL: 'https://api.etherscan.io/api?module=contract',
-    API_TOKEN: '6F5G5QRI6H9RHVT218T8HSK8RIAJ3R1ABF',
-  },
-  polygon: {
-    URL: 'https://api.polygonscan.com/api?module=contract',
-    API_TOKEN: 'DGJQAWP72Y5DZ2CRBYF64B1ITBE67EJ3XB',
-  },
-  xdai: {
-    URL: 'https://blockscout.com/xdai/mainnet/api?module=contract',
-    API_TOKEN: 'e9189f80-3186-400f-a947-da071072144c',
-  },
-};
-
-export const getABI = async ({ blockchain, addressContract }) => {
-  const { URL, API_TOKEN } = API_ENDPOINT[blockchain];
-
-  return axios
-    .get(
-      URL +
-        '&action=getabi&address=' +
-        addressContract +
-        '&apikey=' +
-        API_TOKEN,
-    )
-    .then((response) => response);
-};
 
 const ContributeStep1 = ({
   moduleData,
+  blockchains,
   onNextButtonClick,
   data,
   setData,
@@ -47,6 +16,32 @@ const ContributeStep1 = ({
   const module = moduleData.step1;
   const errors = moduleData.errors;
   const [abiKey, setAbiKey] = useState(0);
+
+  const chains = blockchains.objects.map((chain) => ({
+    value: chain.hs_id,
+    chain_id: chain.chain_id,
+    label: chain.name,
+    icon: chain.icon,
+    api_endpoint: chain.api_endpoint,
+    api_token: chain.api_token,
+  }));
+
+  const getABI = async ({ blockchain, addressContract }) => {
+    const chain = chains.find((c) => c.value === blockchain);
+    if (chain) {
+      return axios
+        .get(
+          chain.api_endpoint +
+            '&action=getabi&address=' +
+            addressContract +
+            '&apikey=' +
+            chain.api_token,
+        )
+        .then((response) => response);
+    } else {
+      return null;
+    }
+  };
 
   useEffect(() => {
     if (data.entry.blockchain && data.entry.contract) {
@@ -140,23 +135,7 @@ const ContributeStep1 = ({
 
         <div className="cds-editor__step1-form">
           <Autocomplete
-            options={[
-              {
-                label: 'Ethereum (Mainnet)',
-                value: 'ethereum',
-                icon: ethereumLogo,
-              },
-              {
-                label: 'Gnosis',
-                value: 'xdai',
-                icon: gnosisLogo,
-              },
-              {
-                label: 'Polygon',
-                value: 'polygon',
-                icon: polygonLogo,
-              },
-            ]}
+            options={chains}
             label={module.form.blockchain_label}
             value={data.entry.blockchain}
             placeholder={module.form.blockchain_placeholder}

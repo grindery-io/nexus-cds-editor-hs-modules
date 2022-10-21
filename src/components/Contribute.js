@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { getCDS } from '../utils/cds';
+import { scrollToTop } from '../utils/scroll';
 import ContributeIntro from './ContributeIntro';
 import ContributeProgress from './ContributeProgress';
 import ContributeStep1 from './ContributeStep1';
@@ -8,7 +10,10 @@ import ContributeStep3 from './ContributeStep3';
 import ContributeStep4 from './ContributeStep4';
 import ContributeSuccess from './ContributeSuccess';
 
-const Contribute = ({ moduleData }) => {
+const CDS_EDITOR_API_ENDPOINT =
+  'https://nexus-cds-editor-api.herokuapp.com/api';
+
+const Contribute = ({ moduleData, blockchains }) => {
   const errors = moduleData.errors;
   const [step, setStep] = useState(0);
   const [data, setData] = useState({
@@ -52,10 +57,7 @@ const Contribute = ({ moduleData }) => {
       return;
     }
     setStep(2);
-    window.scrollTo({
-      top: 187,
-      behavior: 'smooth',
-    });
+    scrollToTop();
   };
 
   const validateStep2 = async () => {
@@ -112,10 +114,33 @@ const Contribute = ({ moduleData }) => {
     }
 
     setStep(3);
-    window.scrollTo({
-      top: 187,
-      behavior: 'smooth',
-    });
+    scrollToTop();
+  };
+
+  const submitCDS = async () => {
+    setLoading(true);
+    setError({ type: '', text: '' });
+    let res;
+
+    try {
+      res = await axios.post(`${CDS_EDITOR_API_ENDPOINT}/cds/submit`, {
+        data: data,
+      });
+    } catch (err) {
+      setError({ type: 'submit', text: err.message });
+      setLoading(false);
+      return;
+    }
+    if (res && res.data && res.data.success) {
+      setStep(5);
+      scrollToTop();
+    } else {
+      setError({
+        type: 'submit',
+        text: 'Server error. Please, try again later.',
+      });
+    }
+    setLoading(false);
   };
 
   return (
@@ -125,10 +150,7 @@ const Contribute = ({ moduleData }) => {
           moduleData={moduleData}
           onButtonClick={() => {
             setStep(1);
-            window.scrollTo({
-              top: 187,
-              behavior: 'smooth',
-            });
+            scrollToTop();
           }}
         />
       )}
@@ -152,6 +174,7 @@ const Contribute = ({ moduleData }) => {
             {step === 1 && (
               <ContributeStep1
                 moduleData={moduleData}
+                blockchains={blockchains}
                 step={step}
                 onNextButtonClick={validateStep1}
                 data={data}
@@ -200,9 +223,7 @@ const Contribute = ({ moduleData }) => {
               <ContributeStep4
                 moduleData={moduleData}
                 step={step}
-                onNextButtonClick={() => {
-                  setStep(5);
-                }}
+                onNextButtonClick={submitCDS}
                 data={data}
                 setData={setData}
                 error={error}

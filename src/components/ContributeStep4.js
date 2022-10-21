@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { RichInput, Autocomplete } from 'grindery-ui';
+import { RichInput, Autocomplete, CircularProgress } from 'grindery-ui';
 
 const ContributeStep4 = ({
   moduleData,
   onNextButtonClick,
   data,
-  setData,
   onBackButtonClick,
+  loading,
+  error,
 }) => {
   const module = moduleData.step4;
   const [type, setType] = useState('');
   const [operation, setOperation] = useState('');
-  const [formData, setFormData] = useState({});
   const cds = JSON.parse(data.entry.cds);
   const types = [
     {
@@ -134,6 +134,14 @@ const ContributeStep4 = ({
         </div>
 
         <div>
+          {loading && (
+            <div class="cds-editor__loading">
+              <CircularProgress />
+            </div>
+          )}
+          {error && error.text && (
+            <p className="cds-editor__form-error">{error.text}</p>
+          )}
           <div class="cds-editor__form-buttons">
             <a
               className="cta_button back"
