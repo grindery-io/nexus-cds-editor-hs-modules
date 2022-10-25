@@ -1,0 +1,28 @@
+{{ require_css(get_asset_url('../../main.css')) }}
+{{ require_js(get_asset_url('../../main.js'), 'footer') }}
+{%- set instance_id = name %}
+
+<div class="cms-react-boilerplate">
+  <script type="application/json"
+    data-module-instance="{{ instance_id }}"
+    data-portal-id="{{ portal_id }}" 
+    data-type="cds-editor-navbar">
+      {
+        "module": {{ module|tojson }}
+      }
+  </script>
+  <div class="cds-editor__navbar">
+    <div class="cds-editor__navbar-left">
+      <a href="{{ module.logo.link.url.href }}" class="cds-editor__navbar-logo">
+        <img src="{{ module.logo.image.src }}" alt="{{ module.logo.image.alt }}" />
+        <div class="cds-editor__navbar-logo-text">
+          <div>{{ module.logo.title }}</div>
+          <div>{{ module.logo.subtitle }}</div>
+        </div>
+      </a>
+    </div>
+    <div class="cds-editor__navbar-right">
+      <div id="App--{{ instance_id }}"></div>
+    </div>
+  </div>
+</div>

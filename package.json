@@ -41,12 +41,17 @@
   "dependencies": {
     "@silizia/react-json-view": "^2.0.0",
     "axios": "^1.1.3",
+    "grindery-nexus-client": "^0.7.0",
     "grindery-ui": "https://github.com/grindery-io/grindery-ui.git#for-hubspot-do-not-remove",
     "postcss": "^8.4.14",
     "react": "^17.0.2",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^17.0.2",
+    "react-foco": "^1.3.1",
+    "react-jdenticon": "^1.0.0",
     "regenerator-runtime": "^0.13.3",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "use-grindery-nexus": "^0.4.2"
   },
   "browserslist": {
     "production": [

@@ -1,0 +1,50 @@
+[
+  {
+    "type": "group",
+    "name": "logo",
+    "label": "Logo",
+    "expanded": false,
+    "children": [
+      {
+        "default": "Nexus",
+        "label": "Title",
+        "locked": false,
+        "name": "title",
+        "required": false,
+        "type": "text",
+        "placeholder": "Nexus"
+      },
+      {
+        "default": "Developer Network",
+        "label": "Subtitle",
+        "locked": false,
+        "name": "subtitle",
+        "required": false,
+        "type": "text",
+        "placeholder": "Developer Network"
+      },
+      {
+        "label": "Image",
+        "locked": false,
+        "name": "image",
+        "required": false,
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "image-alt-text"
+        },
+        "responsive": true,
+        "resizable": true
+      },
+      {
+        "default": "/code-gallery",
+        "label": "Link",
+        "locked": false,
+        "name": "link",
+        "required": false,
+        "type": "text",
+        "placeholder": "/code-gallery"
+      }
+    ]
+  }
+]

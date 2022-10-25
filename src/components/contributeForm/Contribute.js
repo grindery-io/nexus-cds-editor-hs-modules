@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { getCDS } from '../utils/cds';
-import { scrollToTop } from '../utils/scroll';
+import { getCDS } from '../../utils/cds';
+import { scrollToTop } from '../../utils/scroll';
 import ContributeIntro from './ContributeIntro';
 import ContributeProgress from './ContributeProgress';
 import ContributeStep1 from './ContributeStep1';
