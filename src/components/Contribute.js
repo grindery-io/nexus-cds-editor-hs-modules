@@ -123,7 +123,7 @@ const Contribute = ({ moduleData, blockchains }) => {
     let res;
 
     try {
-      res = await axios.post(`${CDS_EDITOR_API_ENDPOINT}/cds/submit`, {
+      res = await axios.post(`${CDS_EDITOR_API_ENDPOINT}/cds`, {
         data: data,
       });
     } catch (err) {

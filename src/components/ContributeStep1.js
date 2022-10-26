@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { RichInput, Autocomplete, CircularProgress } from 'grindery-ui';
 
+const CDS_EDITOR_API_ENDPOINT =
+  'https://nexus-cds-editor-api.herokuapp.com/api';
+
 const ContributeStep1 = ({
   moduleData,
   blockchains,
@@ -22,8 +25,6 @@ const ContributeStep1 = ({
     chain_id: chain.chain_id,
     label: chain.name,
     icon: chain.icon,
-    api_endpoint: chain.api_endpoint,
-    api_token: chain.api_token,
   }));
 
   const getABI = async ({ blockchain, addressContract }) => {
@@ -31,11 +32,11 @@ const ContributeStep1 = ({
     if (chain) {
       return axios
         .get(
-          chain.api_endpoint +
-            '&action=getabi&address=' +
+          CDS_EDITOR_API_ENDPOINT +
+            '/abi?address=' +
             addressContract +
-            '&apikey=' +
-            chain.api_token,
+            '&blockchain=' +
+            chain.chain_id,
         )
         .then((response) => response);
     } else {
