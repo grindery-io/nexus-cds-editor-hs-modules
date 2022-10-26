@@ -1,7 +1,7 @@
 {{ require_css(get_asset_url('../../main.css')) }}
 {{ require_js(get_asset_url('../../main.js'), 'footer') }}
 {%- set instance_id = name %}
-{% set blockchains = hubdb_table_rows(5526908, "limit=1000") %}
+{% set blockchains = hubdb_table_rows(5526908, "limit=1000&orderBy=name") %}
 
 <div class="cms-react-boilerplate">
   <script type="application/json"
